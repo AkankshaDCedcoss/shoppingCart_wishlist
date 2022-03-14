@@ -572,7 +572,7 @@ function displayBuyNow()
 {
 echo " <table><tr><th>image</th><th>id</th><th>price</th><th>quantity</th></tr>";
 echo "<button type='submit' name='removeall2'>Remove All</button>";
-echo "<button type='submit' name='add3'>add All in Buy</button>";
+echo "<button type='submit' name='add3'>add All in Cart</button>";
 
 echo "<button type='submit' name='add4'>add All in wish</button>";
 $i=0;
@@ -634,7 +634,7 @@ echo "</table>";
 
 for($k=0;$k <count($_SESSION['addmycart']);$k++)
 {
-if(isset($_POST['movetobuy'.$i]))
+if(isset($_POST['movetobuy'.$k]))
 {
     array_push($_SESSION['buynow1'],$_SESSION['addmycart'][$k]);
     array_splice($_SESSION['addmycart'],$k,1);
@@ -648,7 +648,7 @@ if(isset($_POST['movetobuy'.$i]))
 
 for($k=0;$k <count($_SESSION['buynow1']);$k++)
 {
-if(isset($_POST['movetobuyy'.$i]))
+if(isset($_POST['movetobuyy'.$k]))
 {
     array_push($_SESSION['addmycart'],$_SESSION['buynow1'][$k]);
     array_splice($_SESSION['buynow1'],$k,1);
@@ -662,7 +662,7 @@ if(isset($_POST['movetobuyy'.$i]))
 
 for($k=0;$k <count($_SESSION['addmycart']);$k++)
 {
-if(isset($_POST['movetowish'.$i]))
+if(isset($_POST['movetowish'.$k]))
 {
     array_push($_SESSION['wishlist'],$_SESSION['addmycart'][$k]);
     array_splice($_SESSION['addmycart'],$k,1);
@@ -675,7 +675,7 @@ if(isset($_POST['movetowish'.$i]))
 
 for($k=0;$k <count($_SESSION['buynow1']);$k++)
 {
-if(isset($_POST['movetowishh'.$i]))
+if(isset($_POST['movetowishh'.$k]))
 {
     array_push($_SESSION['wishlist'],$_SESSION['buynow1'][$k]);
     array_splice($_SESSION['buynow1'],$k,1);
@@ -689,7 +689,7 @@ if(isset($_POST['movetowishh'.$i]))
 
 for($k=0;$k <count($_SESSION['wishlist']);$k++)
 {
-if(isset($_POST['movetowishhh'.$i]))
+if(isset($_POST['movetowishhh'.$k]))
 {
     array_push($_SESSION['buynow1'],$_SESSION['wishlist'][$k]);
     array_splice($_SESSION['wishlist'],$k,1);
@@ -702,7 +702,7 @@ if(isset($_POST['movetowishhh'.$i]))
 
 for($k=0;$k <count($_SESSION['wishlist']);$k++)
 {
-if(isset($_POST['movetobuyyy'.$i]))
+if(isset($_POST['movetobuyyy'.$k]))
 {
     array_push($_SESSION['buynow1'],$_SESSION['wishlist'][$k]);
     array_splice($_SESSION['wishlist'],$k,1);
